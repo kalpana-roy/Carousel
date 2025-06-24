@@ -1,0 +1,79 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+  height: 250px;
+}
+
+/******************************************
+/* CAROUSEL STYLES
+/*******************************************/
+ /* The wrapper centers the carousel and places the nav buttons to the sides */
+ #carousel-wrapper {
+  width: 400px;
+  margin: 20px auto;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+      /* The container hides overflowing content and shows one slide at a time */
+      #carousel-container {
+        display: flex;
+        
+        /*overflow-wrap: normal;*/
+        
+        width: 375px; /* set width to match your slide width */
+        height: 600px;
+        transition: transform 0.3s ease-in-out; /* add smooth transition here */
+        /* Create a positioning context */
+
+
+     
+      }
+
+      /* Each slide is a flex item with a fixed minimum width */
+      .carousel-item {
+         /* Establish a positioning context */
+         position: relative;
+        width: 375px;       /* Force a fixed width */
+        flex-shrink: 0;     /* Prevent them from shrinking */
+        padding: 10px;         /* Remove padding for testing */
+        box-sizing: border-box;
+        text-align: center;
+        overflow: hidden;
+        /* Optionally, add a background for debugging */
+       /*flex: 1 1 0;
+        min-width: 0;
+        */
+        
+      }
+
+
+    
+      .carousel-item img {
+        flex:0 0 100%;
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        
+
+
+      }
