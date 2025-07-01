@@ -32,6 +32,10 @@ img{
   display: flex;
   justify-content: center;
 }
+#numberstoshow {
+  display: flex;
+  justify-content: center;
+}
 
       /* The container hides overflowing content and shows one slide at a time */
       #carousel-container {

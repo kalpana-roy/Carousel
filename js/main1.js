@@ -1,6 +1,6 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
 // Global carousel variables
-let currentIndex = 0;
+let currentIndex
 const carouselContainer = document.getElementById("carousel-container");
 
 const previous = document.querySelector("#prev")
@@ -10,7 +10,8 @@ previous.addEventListener('click', prevSlide)
 next.addEventListener('click', nextSlide)
 // This event listener triggers when the "Get Cocktail" button is clicked.
 document.querySelector("button").addEventListener("click", grabCocktail);
-
+const heading = document.querySelector('#heading')
+//heading.textContent = 0
 // Navigation event listeners:
 
 function grabCocktail() {
@@ -107,15 +108,23 @@ setInterval(nextSlide, 3000); // Change slide every 3 seconds
 //showSlide(currentSlide);
 
 function updateCarousel(){
-  console.log('triggered')
+  if(isNaN(currentIndex)){
+    currentIndex = -1
+    
+    console.log(currentIndex)
+  }
+   // heading.textContent = `0 of ${slides.length}`
+  heading.textContent = `${currentIndex+1} of ${slides.length}`
   carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`
-  console.log('triggered*'+ currentIndex)
+  
 }
 function nextSlide(){
-  console.log('triggered nextSlide')
+  if(Number.isNaN(currentIndex)=== NaN){
+    currentIndex = 0
+    alert('hello')
+    console.log(currentIndex)
+  }
   currentIndex = (currentIndex+1) % slides.length
-  console.log('currentindex value in nextSlide'+ currentIndex)
-  console.log("*"+slides.length)
   updateCarousel()
 }
 function prevSlide(){
